@@ -21,7 +21,7 @@
 	</div>
 	<div class="content">
 		<?php  if (isset($_SESSION['username'])) : ?>
-			<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
+			<p>Welcome, user!</p>
 			<p> <a href="index.php?logout='1'" style="color: #d6b0de;">Logout</a> </p>
 		<?php endif ?>
 	</div>
