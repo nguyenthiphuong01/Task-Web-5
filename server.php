@@ -7,8 +7,10 @@ $errors = array();
 $db = mysqli_connect('localhost', 'root', '', 'login_db');
 
 if (isset($_POST['reg_user'])) {
-  $username = mysqli_real_escape_string($db, $_POST['username']);
-  $password = mysqli_real_escape_string($db, $_POST['password']);
+  //$username = mysqli_real_escape_string($db, $_POST['username']);
+  //$password = mysqli_real_escape_string($db, $_POST['password']);
+  $username = $_POST['username'];
+  $password = $_POST['password'];
 
   if (empty($username)) { array_push($errors, "Username is required"); }
   if (empty($password)) { array_push($errors, "Password is required"); }
@@ -35,8 +37,10 @@ if (isset($_POST['reg_user'])) {
 }
 
 if (isset($_POST['login_user'])) {
-  $username = mysqli_real_escape_string($db, $_POST['username']);
-  $password = mysqli_real_escape_string($db, $_POST['password']);
+  //$username = mysqli_real_escape_string($db, $_POST['username']);
+  //$password = mysqli_real_escape_string($db, $_POST['password']);
+  $username = $_POST['username'];
+  $password = $_POST['password'];
 
   if (empty($username)) {
   	array_push($errors, "Username is required");
