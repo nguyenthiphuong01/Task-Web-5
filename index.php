@@ -12,17 +12,15 @@
 <html>
 <head>
 	<title>Home</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<div class="header">
-		<h2>Home Page</h2>
-		<h3>Welcome to my project page</h3>
-	</div>
 	<div class="content">
 		<?php  if (isset($_SESSION['username'])) : ?>
 			<p>Welcome, user!</p>
 			<p> <a href="index.php?logout='1'" style="color: #d6b0de;">Logout</a> </p>
+		<?php else: ?>
+			<p>Must login first!</p>
+			<p> <a href="login.php" style="color: #d6b0de;"> Here </a> </p>	
 		<?php endif ?>
 	</div>
 </body>
