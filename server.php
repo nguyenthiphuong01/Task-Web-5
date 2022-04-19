@@ -7,8 +7,8 @@ $errors = array();
 $db = mysqli_connect('localhost', 'root', '', 'login_db');
 
 if (isset($_POST['reg_user'])) {
-  //$username = mysqli_real_escape_string($db, $_POST['username']);
-  //$password = mysqli_real_escape_string($db, $_POST['password']);
+  #$username = mysqli_real_escape_string($db, $_POST['username']);
+  #$password = mysqli_real_escape_string($db, $_POST['password']);
   $username = $_POST['username'];
   $password = $_POST['password'];
 
@@ -26,7 +26,7 @@ if (isset($_POST['reg_user'])) {
   }
 
   if (count($errors) == 0) {
-  	$password = md5($password);
+  	#$password = md5($password);
 
   	$query = "INSERT INTO users (username, password) 
   			  VALUES('$username', '$password')";
@@ -37,8 +37,8 @@ if (isset($_POST['reg_user'])) {
 }
 
 if (isset($_POST['login_user'])) {
-  //$username = mysqli_real_escape_string($db, $_POST['username']);
-  //$password = mysqli_real_escape_string($db, $_POST['password']);
+  #$username = mysqli_real_escape_string($db, $_POST['username']);
+  #$password = mysqli_real_escape_string($db, $_POST['password']);
   $username = $_POST['username'];
   $password = $_POST['password'];
 
@@ -50,7 +50,7 @@ if (isset($_POST['login_user'])) {
   }
 
   if (count($errors) == 0) {
-  	$password = md5($password);
+  	#$password = md5($password);
   	$query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
   	$results = mysqli_query($db, $query);
   	if (mysqli_num_rows($results) == 1) {
