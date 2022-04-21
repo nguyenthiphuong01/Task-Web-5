@@ -31,7 +31,7 @@
 				$lastname = $_GET['lastname'];
 				
 				$query = "SELECT * FROM names WHERE firstname='$firstname' AND lastname='$lastname'";
-				$datas = $db->query($query);
+				$datas = mysqli_connect('localhost', 'root', '', 'login_db')->query($query);
 				if ($datas->num_rows > 0) {
 					while($row = $datas->fetch_assoc()) {
 						echo "<br> ".$row["id"]. " ".$row["firstname"]. " ".$row["lastname"]. "<br>";
