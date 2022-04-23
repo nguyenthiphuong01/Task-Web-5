@@ -24,23 +24,20 @@
 		<?php endif ?>
 	</div>
 	
-	<div class="union">
-		<?php include("server.php");
-			if (isset($_GET['firstname']) && isset($_GET['lastname'])){
-				$firstname = $_GET['firstname'];
-				$lastname = $_GET['lastname'];
-				
-				$query = "SELECT * FROM names WHERE firstname='$firstname' AND lastname='$lastname'";
-				$datas = mysqli_connect('localhost', 'root', '', 'login_db')->query($query);
-				if ($datas->num_rows > 0) {
-					while($row = $datas->fetch_assoc()) {
-						echo "<br> ".$row["id"]. " ".$row["firstname"]. " ".$row["lastname"]. "<br>";
-					} 
-				} else {
-					echo "No result!";
+	<?php
+		if (isset($_GET['id'])){
+			$id = $_GET['id'];
+					
+			$query = "SELECT * FROM names WHERE id='$id'";
+			$datas = mysqli_connect('localhost', 'root', '', 'login_db')->query($query);
+			if (isset($datas -> num_rows) && $datas->num_rows > 0) {
+				while($row = $datas->fetch_assoc()) {
+					echo "<br> ".$row["id"]. " ".$row["firstname"]. " ".$row["lastname"]. "<br>";
 				} 
-			}			
-		?>
-	</div>
+			} else {
+				echo "No result!";
+			} 
+		}
+	?>
 </body>
 </html>
